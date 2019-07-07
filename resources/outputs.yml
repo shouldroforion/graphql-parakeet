@@ -1,0 +1,13 @@
+SnsTopicArn:
+  Value:
+    Ref: SnsTopic
+  Export:
+    Name:
+      Fn::Join:
+        [
+          ":",
+          [
+            Ref: AWS::StackName,
+            "${self:custom.parent}-${self:custom.codename}-${self:service}-SnsTopic-Arn",
+          ],
+        ]

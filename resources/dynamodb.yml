@@ -1,0 +1,16 @@
+Resources:
+    NicknamesGqlDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        AttributeDefinitions:
+          - AttributeName: firstName
+            AttributeType: S
+
+        KeySchema:
+          - AttributeName: firstName
+            KeyType: HASH
+
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

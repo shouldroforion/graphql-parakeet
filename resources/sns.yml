@@ -1,0 +1,15 @@
+Resources:
+  SnsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName:
+        Fn::Join: ["", ["SNS Topic for ", "${self:custom.topicName}"]]
+      TopicName: ${self:custom.topicName}
+
+  SnsSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Endpoint: "SlcItdNotifications@magellanhealth.com"
+      Protocol: email
+      TopicArn:
+        Ref: SnsTopic
