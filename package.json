@@ -9,7 +9,7 @@
     "test": "mocha './tests/**/*.spec.js'"
   },
   "dependencies": {
-    "apollo-server-lambda": "^2.5.0",
+    "apollo-server-lambda": "^2.14.2",
     "graphql": "^14.3.1",
     "uuid": "^2.0.3"
   },
